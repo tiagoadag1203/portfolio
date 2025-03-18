@@ -1,0 +1,10 @@
+.container-login{
+    width: 340px;
+    border: 2px solid var(--title-color);
+    border-radius: 30px;
+    padding: 25px 50px;
+}
+
+.form-login{
+    width: 100%;
+}
