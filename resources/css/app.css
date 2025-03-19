@@ -1,4 +1,7 @@
+@import 'reset.css';
 @import 'root.css';
 @import 'style.css';
-@import 'login.css';
+@import 'pages/login.css';
 @import 'components/input.css';
+@import 'components/button.css';
+@import 'components/alert.css';

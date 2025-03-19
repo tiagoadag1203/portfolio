@@ -1,0 +1,17 @@
+.alert{
+    position: absolute;
+    top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    /* width: fit-content; */
+}
+
+.alert-success{
+    background: var(--dark-green);
+    color: var(--light-green);
+}
+
+.alert-danger{
+    background: var(--dark-red);
+    color: var(--light-red);
+}
