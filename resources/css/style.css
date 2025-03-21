@@ -58,9 +58,14 @@ h3 {
     flex-direction: column;
 }
 
-.centered {
-    justify-content: center;
-    align-items: center;
+.center-horizontal {
+    display: flex;
+    justify-content: center; /* Alinha horizontalmente */
+}
+
+.center-vertical {
+    display: flex;
+    align-items: center; /* Alinha verticalmente */
 }
 
 .wrap {

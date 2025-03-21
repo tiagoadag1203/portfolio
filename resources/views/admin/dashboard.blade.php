@@ -8,32 +8,32 @@
         Seja bem-vindo 👋!
     </h1>
     <div class="flex wrap gap-20">
-        <a href="">
-            <div class="button-section flex column centered gap-10">
+        <a href="personal-info">
+            <div class="button-section flex column center-horizontal center-vertical gap-10">
                 <span class="material-symbols-outlined">face</span>
                 <p>Perfil</p>
             </div>
         </a>
         <a href="">
-            <div class="button-section flex column centered gap-10">
+            <div class="button-section flex column center-horizontal center-vertical gap-10">
                 <span class="material-symbols-outlined">cognition_2</span>
                 <p>Habilidades</p>
             </div>
         </a>
         <a href="">
-            <div class="button-section flex column centered gap-10">
+            <div class="button-section flex column center-horizontal center-vertical gap-10">
                 <span class="material-symbols-outlined">work</span>
                 <p>Experiências</p>
             </div>
         </a>
         <a href="">
-            <div class="button-section flex column centered gap-10">
+            <div class="button-section flex column center-horizontal center-vertical gap-10">
                 <span class="material-symbols-outlined">folder</span>
                 <p>Projetos</p>
             </div>
         </a>
         <a href="logout">
-            <div class="button-section flex column centered gap-10 logout">
+            <div class="button-section flex column center-horizontal center-vertical gap-10 logout">
                 <span class="material-symbols-outlined">logout</span>
                 <p>Logout</p>
             </div>
