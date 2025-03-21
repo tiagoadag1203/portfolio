@@ -12,4 +12,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', function() {
         return view('admin.dashboard');
     })->name('dashboard');
+    Route::prefix('dashboard')->group(function () {
+        Route::resource('personal-info', PersonalInfoController::class);
+    });
 });
