@@ -3,8 +3,6 @@
 html,
 body {
     display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
     width: 100%;
     background-color: var(--background-color);
@@ -16,6 +14,11 @@ body {
 
 span {
     font-family: 'JetBrains Mono', monospace;
+}
+
+a{
+    text-decoration: none;
+    color: var(--title-color);
 }
 
 h1,
@@ -43,7 +46,7 @@ h3 {
 
 .main {
     width: 100%;
-    padding: 0 200px;
+    padding: 50px 200px;
     box-sizing: border-box;
 }
 
@@ -58,6 +61,14 @@ h3 {
 .centered {
     justify-content: center;
     align-items: center;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.gap-5 {
+    gap: 5px;
 }
 
 .gap-10 {

@@ -1,0 +1,18 @@
+.button-section {
+    width: 90px;
+    height: 90px;
+    padding: 20px;
+    border: 2px solid var(--title-color);
+    border-radius: 30px;
+    transition: 0.2s;
+}
+
+.button-section:hover {
+    background: var(--primary);
+}
+
+.button-section {
+    span {
+        font-size: 2rem;
+    }
+}
