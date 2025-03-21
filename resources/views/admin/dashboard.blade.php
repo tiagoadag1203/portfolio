@@ -32,6 +32,12 @@
                 <p>Projetos</p>
             </div>
         </a>
+        <a href="logout">
+            <div class="button-section flex column centered gap-10 logout">
+                <span class="material-symbols-outlined">logout</span>
+                <p>Logout</p>
+            </div>
+        </a>
     </div>
 </main>
 @endsection

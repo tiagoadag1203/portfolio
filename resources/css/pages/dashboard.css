@@ -16,3 +16,8 @@
         font-size: 2rem;
     }
 }
+
+.logout {
+    background: var(--light-red);
+    color: var(--dark-red);
+}
