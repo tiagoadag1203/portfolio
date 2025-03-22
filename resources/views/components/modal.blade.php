@@ -1,17 +1,11 @@
-<div id="{{ $id }}" class="modal" style="display: flex;">
+<div id="{{ $id }}" class="modal" style="display: none;">
     <div class="modal-content flex column">
         <div class="modal-header">
-            <h2 class="modal-title">{{ $title }}</h2>
-            <span onclick="closeModal('{{ $id }}')" class="material-symbols-outlined">close</span>
+            <h3 class="modal-title">{{ $title }}</h3>
+            <span onclick="closeModal('{{ $id }}')" class="material-symbols-outlined btn-close">close</span>
         </div>
         <div class="modal-body">
-            <form class="flex column centered gap-20 form-login" method="POST" action="{{ $action }}">
-                @csrf
-                {{ $slot }}
-            </form>
-        </div>
-        <div class="modal-footer">
-            <x-button icon="save" label="Salvar" type="submit"></x-button>
+            {{ $slot }}
         </div>
     </div>
 </div>
@@ -52,14 +46,7 @@
         overflow-y: auto;
     }
 
-    .modal-footer {
-        display: flex;
-        align-items: center;
-        border-top: 1px solid var(--gray);
-        padding: 20px;
-    }
-
-    .close {
+    .btn-close {
         background: none;
         border: none;
         font-size: 20px;

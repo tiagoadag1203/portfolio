@@ -19,6 +19,7 @@
         font-size: 14px;
         font-weight: 700;
         transition: 0.2s;
+        width: fit-content;
     }
 
     .button:hover {

@@ -43,9 +43,9 @@ class PersonalInfoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $id, Request $request)
     {
-        //
+
     }
 
     /**
@@ -53,7 +53,21 @@ class PersonalInfoController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'bio' => 'required|string',
+            'image' => 'required|string',
+        ]);
+
+        try {
+            $personalInfo = PersonalInfo::find($id);
+            $personalInfo->bio = $request->input('bio');
+            $personalInfo->image = $request->input('image');
+            $personalInfo->save();
+
+            return redirect()->route('personal-info.index')->with('success', 'Informação atualizada com sucesso!');
+        } catch (\Exception $e) {
+            return redirect()->route('personal-info.index')->with('error', 'Erro ao atualizar a informação.');
+        }
     }
 
     /**
