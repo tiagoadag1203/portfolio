@@ -21,3 +21,8 @@
     background: var(--light-red);
     color: var(--dark-red);
 }
+
+.logout:hover {
+    background: var(--dark-red);
+    color: var(--light-red);
+}

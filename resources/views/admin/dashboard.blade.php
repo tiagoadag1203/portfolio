@@ -8,7 +8,7 @@
         Seja bem-vindo 👋!
     </h1>
     <div class="flex wrap gap-20">
-        <a href="personal-info">
+        <a href="{{ route('personal-info.index') }}">
             <div class="button-section flex column center-horizontal center-vertical gap-10">
                 <span class="material-symbols-outlined">face</span>
                 <p>Perfil</p>

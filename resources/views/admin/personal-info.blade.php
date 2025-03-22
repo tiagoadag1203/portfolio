@@ -6,7 +6,7 @@
 <x-alert></x-alert>
 <main class="main flex column gap-30">
     <div class="flex center-vertical gap-20">
-        <a onclick="history.back()"><span class="material-symbols-outlined">arrow_back</span></a>
+        <a href="{{ route('dashboard') }}"><span class="material-symbols-outlined">arrow_back</span></a>
         <h1>Perfil</h1>
     </div>
     <x-button onclick="openModal('modalEdit')" icon="edit" label="Editar" type=""></x-button>
