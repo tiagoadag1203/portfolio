@@ -1,13 +1,15 @@
-@if(session('success'))
-<div class="alert alert-success">
-    {{ session('success') }}
+<div class="alert-container flex column center-horizontal center-vertical">
+    @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+    @endif
+    @if(session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+    @endif
 </div>
-@endif
-@if(session('error'))
-<div class="alert alert-danger">
-    {{ session('error') }}
-</div>
-@endif
 
 <script>
     setTimeout(() => {
@@ -17,3 +19,27 @@
         }
     }, 3000);
 </script>
+<style>
+    .alert-container {
+        position: fixed;
+        top: 20px;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .alert {
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .alert-success {
+        background: var(--dark-green);
+        color: var(--light-green);
+    }
+
+    .alert-danger {
+        background: var(--dark-red);
+        color: var(--light-red);
+    }
+</style>
