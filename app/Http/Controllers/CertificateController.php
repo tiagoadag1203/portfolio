@@ -4,14 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\Certificate;
 use Illuminate\Http\Request;
+use App\Models\Skill;
 
 class CertificateController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
+    public function index() {
+
     }
 
     /**
@@ -43,8 +44,9 @@ class CertificateController extends Controller
      */
     public function show(string $skill_id)
     {
+        $skill = Skill::find($skill_id);
         $certificates = Certificate::where('skill_id', $skill_id)->get();
-        return view('admin.certificates', compact('certificates', 'skill_id'));
+        return view('admin.certificates', compact('certificates', 'skill'));
     }
 
     /**
@@ -62,7 +64,6 @@ class CertificateController extends Controller
     {
         $request->validate([
             'name' => 'required|string',
-            'skill_id' => 'required',
             'link' => 'nullable|string',
             'image' => 'nullable|string',
         ]);
