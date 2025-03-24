@@ -14,5 +14,7 @@ Route::middleware('auth')->group(function () {
     })->name('dashboard');
     Route::prefix('dashboard')->group(function () {
         Route::resource('personal-info', PersonalInfoController::class);
+        Route::resource('skills', SkillController::class);
+        Route::resource('certificates', CertificateController::class);
     });
 });

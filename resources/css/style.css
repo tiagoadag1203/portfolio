@@ -68,6 +68,10 @@ h3 {
     align-items: center; /* Alinha verticalmente */
 }
 
+.space-between {
+    justify-content: space-between;
+}
+
 .wrap {
     flex-wrap: wrap;
 }

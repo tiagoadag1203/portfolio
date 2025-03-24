@@ -9,10 +9,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 10px;
+        gap: 5px;
         background-color: var(--title-color);
         color: var(--background-color);
-        padding: 10px;
+        padding: 8px 10px;
         border: none;
         border-radius: 10px;
         cursor: pointer;
@@ -20,9 +20,24 @@
         font-weight: 700;
         transition: 0.2s;
         width: fit-content;
+
+        .material-symbols-outlined {
+            font-size: 20px;
+        }
     }
 
     .button:hover {
         opacity: 0.5;
+    }
+
+    
+    .edit {
+        background-color: var(--light-blue);
+        color: var(--dark-blue);
+    }
+
+    .delete {
+        background-color: var(--light-red);
+        color: var(--dark-red);
     }
 </style>

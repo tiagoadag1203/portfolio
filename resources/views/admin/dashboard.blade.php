@@ -14,7 +14,7 @@
                 <p>Perfil</p>
             </div>
         </a>
-        <a href="">
+        <a href="{{ route('skills.index') }}">
             <div class="button-section flex column center-horizontal center-vertical gap-10">
                 <span class="material-symbols-outlined">cognition_2</span>
                 <p>Habilidades</p>
