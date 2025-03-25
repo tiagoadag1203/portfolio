@@ -15,7 +15,7 @@ Route::middleware('auth')->group(function () {
         Route::resource('personal-info', PersonalInfoController::class);
         Route::resource('skills', SkillController::class);
         Route::resource('certificates', CertificateController::class);
-        Route::resource('experiences', ExperienceController::class);
+        Route::resource('experiences', ExperienceController::class)->only(['index', 'store', 'update', 'destroy']);
         Route::resource('projects', ProjectController::class);
     });
 });
