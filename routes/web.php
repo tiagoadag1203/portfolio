@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
 
 Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::post('/login', [AuthController::class, 'loginAttempt'])->name('auth');
@@ -16,5 +15,6 @@ Route::middleware('auth')->group(function () {
         Route::resource('personal-info', PersonalInfoController::class);
         Route::resource('skills', SkillController::class);
         Route::resource('certificates', CertificateController::class);
+        Route::resource('experiences', ExperienceController::class);
     });
 });

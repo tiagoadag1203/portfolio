@@ -20,7 +20,7 @@
                 <p>Habilidades</p>
             </div>
         </a>
-        <a href="">
+        <a href="{{ route('experiences.index') }}">
             <div class="button-section flex column center-horizontal center-vertical gap-10">
                 <span class="material-symbols-outlined">work</span>
                 <p>Experiências</p>
