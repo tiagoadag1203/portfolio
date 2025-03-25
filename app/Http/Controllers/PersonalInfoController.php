@@ -17,38 +17,6 @@ class PersonalInfoController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id, Request $request)
-    {
-
-    }
-
-    /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
@@ -59,22 +27,12 @@ class PersonalInfoController extends Controller
         ]);
 
         try {
-            $personalInfo = PersonalInfo::find($id);
-            $personalInfo->bio = $request->input('bio');
-            $personalInfo->image = $request->input('image');
-            $personalInfo->save();
-
-            return redirect()->route('personal-info.index')->with('success', 'Informação atualizada com sucesso!');
-        } catch (\Exception $e) {
-            return redirect()->route('personal-info.index')->with('error', 'Erro ao atualizar a informação.');
+            PersonalInfo::find($id)->update($request->all());
+    
+            return back()->with('success', 'Informação atualizada com sucesso!');
         }
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        catch (\Exception $e) {
+            return back()->with('error', 'Erro ao atualizar informação!');
+        }
     }
 }

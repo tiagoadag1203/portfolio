@@ -68,6 +68,16 @@ h3 {
     align-items: center; /* Alinha verticalmente */
 }
 
+.align-left {
+    display: flex;
+    justify-content: flex-start; /* Alinha à esquerda */
+}
+
+.align-right {
+    display: flex;
+    justify-content: flex-end; /* Alinha à direita */
+}
+
 .space-between {
     justify-content: space-between;
 }
