@@ -17,14 +17,6 @@ class SkillController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
@@ -37,24 +29,12 @@ class SkillController extends Controller
             'image' => 'nullable|string'
         ]);
 
-        Skill::create($request->all());
-        return redirect()->route('skills.index')->with('success', 'Habilidade criada com sucesso!');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
+        try {
+            Skill::create($request->all());
+            return back()->with('success', 'Habilidade criada com sucesso!');
+        } catch (\Exception $e) {
+            return back()->with('error', 'Erro ao criar habilidade!');
+        }
     }
 
     /**
@@ -70,8 +50,12 @@ class SkillController extends Controller
             'image' => 'nullable|string'
         ]);
 
-        Skill::find($id)->update($request->all());
-        return redirect()->route('skills.index')->with('success', 'Habilidade atualizada com sucesso!');
+        try {
+            Skill::find($id)->update($request->all());
+            return redirect()->route('skills.index')->with('success', 'Habilidade atualizada com sucesso!');
+        } catch (\Exception $e) {
+            return back()->with('error', 'Erro ao atualizar habilidade!');
+        }
     }
 
     /**
@@ -79,7 +63,11 @@ class SkillController extends Controller
      */
     public function destroy(string $id)
     {
-        Skill::destroy($id);
-        return redirect()->route('skills.index')->with('success', 'Habilidade deletada com sucesso!');
+        try {
+            Skill::destroy($id);
+            return redirect()->route('skills.index')->with('success', 'Habilidade deletada com sucesso!');
+        } catch (\Exception $e) {
+            return back()->with('error', 'Erro ao deletar habilidade!');
+        }
     }
 }

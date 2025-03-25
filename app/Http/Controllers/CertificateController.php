@@ -9,21 +9,6 @@ use App\Models\Skill;
 class CertificateController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     */
-    public function index() {
-
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
@@ -35,8 +20,12 @@ class CertificateController extends Controller
             'image' => 'nullable|string',
         ]);
 
-        Certificate::create($request->all());
-        return back()->with('success', 'Certificado criado com sucesso!');
+        try {
+            Certificate::create($request->all());
+            return back()->with('success', 'Certificado criado com sucesso!');
+        } catch (\Exception $e) {
+            return back()->with('error', 'Erro ao criar certificado!');
+        }
     }
 
     /**
@@ -50,14 +39,6 @@ class CertificateController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
@@ -68,8 +49,12 @@ class CertificateController extends Controller
             'image' => 'nullable|string',
         ]);
 
-        Certificate::find($id)->update($request->all());
-        return back()->with('success', 'Certificado atualizado com sucesso!');
+        try{
+            Certificate::find($id)->update($request->all());
+            return back()->with('success', 'Certificado atualizado com sucesso!');
+        } catch (\Exception $e) {
+            return back()->with('error', 'Erro ao atualizar certificado!');
+        }
     }
 
     /**
@@ -77,7 +62,11 @@ class CertificateController extends Controller
      */
     public function destroy(string $id)
     {
-        Certificate::destroy($id);
-        return back()->with('success', 'Certificado removido com sucesso!');
+        try{
+            Certificate::destroy($id);
+            return back()->with('success', 'Certificado removido com sucesso!');
+        } catch (\Exception $e) {
+            return back()->with('error', 'Erro ao remover certificado!');
+        }
     }
 }
