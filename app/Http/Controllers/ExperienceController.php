@@ -36,6 +36,10 @@ class ExperienceController extends Controller
             'start_date' => 'required',
         ]);
 
+        if(!empty($request->end_date) && $request->end_date < $request->start_date) {
+            return back()->with('error', 'A data de término não pode ser anterior à data de início.');
+        }
+
         Experience::create($request->all());
         return back()->with('success', 'Experiência criada com sucesso.');
     }
@@ -67,6 +71,10 @@ class ExperienceController extends Controller
             'description' => 'required',
             'start_date' => 'required',
         ]);
+
+        if(!empty($request->end_date) && $request->end_date < $request->start_date) {
+            return back()->with('error', 'A data de término não pode ser anterior à data de início.');
+        }
 
         Experience::find($id)->update($request->all());
         return back()->with('success', 'Experiência atualizada com sucesso.');
