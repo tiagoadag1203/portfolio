@@ -53,7 +53,7 @@
 </ul>
 
     <!-- MODAL ADICIONAR -->
-    <x-modal id="modalAdd" title="Editar Habilidade">
+    <x-modal id="modalAdd" title="Nova Habilidade">
         <form class="flex column centered gap-20 form-login" action="{{ route('skills.store') }}" method="POST">
             @csrf
             @method('POST')
