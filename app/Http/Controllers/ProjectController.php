@@ -17,14 +17,6 @@ class ProjectController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
@@ -34,24 +26,12 @@ class ProjectController extends Controller
             'description' => 'required|string',
         ]);
 
-        Project::create($request->all());
-        return back()->with('success', 'Projeto criado com sucesso!');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
+        try {
+            Project::create($request->all());
+            return back()->with('success', 'Projeto criado com sucesso!');
+        } catch (\Exception $e) {
+            return back()->with('error', 'Erro ao criar projeto!');
+        }
     }
 
     /**
@@ -64,8 +44,12 @@ class ProjectController extends Controller
             'description' => 'required|string',
         ]);
 
-        Project::find($id)->update($request->all());
-        return back()->with('success', 'Projeto atualizado com sucesso!');
+        try {
+            Project::find($id)->update($request->all());
+            return back()->with('success', 'Projeto atualizado com sucesso!');
+        } catch (\Exception $e) {
+            return back()->with('error', 'Erro ao atualizar projeto!');
+        }
     }
 
     /**
@@ -73,7 +57,11 @@ class ProjectController extends Controller
      */
     public function destroy(string $id)
     {
-        Project::destroy($id);
-        return back()->with('success', 'Projeto deletado com sucesso!');
+        try {
+            Project::destroy($id);
+            return back()->with('success', 'Projeto deletado com sucesso!');
+        } catch (\Exception $e) {
+            return back()->with('error', 'Erro ao deletar projeto!');
+        }
     }
 }
