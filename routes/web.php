@@ -16,5 +16,6 @@ Route::middleware('auth')->group(function () {
         Route::resource('skills', SkillController::class);
         Route::resource('certificates', CertificateController::class);
         Route::resource('experiences', ExperienceController::class);
+        Route::resource('projects', ProjectController::class);
     });
 });

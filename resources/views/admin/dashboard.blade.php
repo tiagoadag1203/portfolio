@@ -26,7 +26,7 @@
                 <p>Experiências</p>
             </div>
         </a>
-        <a href="">
+        <a href="{{ route('projects.index') }}">
             <div class="button-section flex column center-horizontal center-vertical gap-10">
                 <span class="material-symbols-outlined">folder</span>
                 <p>Projetos</p>
