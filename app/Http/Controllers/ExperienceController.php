@@ -17,14 +17,6 @@ class ExperienceController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
@@ -40,24 +32,12 @@ class ExperienceController extends Controller
             return back()->with('error', 'A data de término não pode ser anterior à data de início.');
         }
 
-        Experience::create($request->all());
-        return back()->with('success', 'Experiência criada com sucesso.');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
+        try {
+            Experience::create($request->all());
+            return back()->with('success', 'Experiência criada com sucesso.');
+        } catch (\Exception $e) {
+            return back()->with('error', 'Erro ao criar experiência.');
+        }
     }
 
     /**
@@ -76,8 +56,12 @@ class ExperienceController extends Controller
             return back()->with('error', 'A data de término não pode ser anterior à data de início.');
         }
 
-        Experience::find($id)->update($request->all());
-        return back()->with('success', 'Experiência atualizada com sucesso.');
+        try {
+            Experience::find($id)->update($request->all());
+            return back()->with('success', 'Experiência atualizada com sucesso.');
+        } catch (\Exception $e) {
+            return back()->with('error', 'Erro ao atualizar experiência.');
+        }
     }
 
     /**
@@ -85,7 +69,11 @@ class ExperienceController extends Controller
      */
     public function destroy(string $id)
     {
-        Experience::find($id)->delete();
-        return back()->with('success', 'Experiência deletada com sucesso.');
+        try {
+            Experience::find($id)->delete();
+            return back()->with('success', 'Experiência deletada com sucesso.');
+        } catch (\Exception $e) {
+            return back()->with('error', 'Erro ao deletar experiência.');
+        }
     }
 }
