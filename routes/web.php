@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/login', [AuthController::class, 'index'])->name('login');
-Route::post('/login', [AuthController::class, 'loginAttempt'])->name('auth');
-Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::controller(AuthController::class)->group(function () {
+    Route::get('/login', 'index')->name('login');
+    Route::post('/login', 'loginAttempt')->name('auth');
+    Route::get('/logout', 'logout')->name('logout');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', function() {

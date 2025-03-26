@@ -32,7 +32,7 @@
                 <p>Projetos</p>
             </div>
         </a>
-        <a href="logout">
+        <a href="{{ route('logout') }}">
             <div class="button-section flex column center-horizontal center-vertical gap-10 logout">
                 <span class="material-symbols-outlined">logout</span>
                 <p>Logout</p>
