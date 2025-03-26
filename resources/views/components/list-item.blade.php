@@ -15,11 +15,26 @@
         padding: 10px;
         border-bottom: 1px solid var(--gray);
         box-sizing: border-box;
+
+        p {
+            margin: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            max-width: 400px;
+        }
     }
 
     .item-img {
         width: 50px;
         height: 50px;
         border-radius: 10px;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .list-item {
+            min-width: 100%;
+            overflow-x: scroll;
+        }
     }
 </style>

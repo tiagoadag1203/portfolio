@@ -62,9 +62,9 @@
                 <option value="hard">Hard</option>
                 <option value="soft">Soft</option>
             </x-select>
-            <x-input label="Porcentagem:" name="percentage" id="percentage" type="number" required="true" value="" />
-            <x-input label="Descrição:" name="description" id="description" type="textarea" required="true" value="" />
-            <x-input label="Imagem Link:" name="image" id="image" type="text" required="true" value="" />
+            <x-input label="Porcentagem:" name="percentage" id="percentage" type="number" required="" value="" />
+            <x-input label="Descrição:" name="description" id="description" type="textarea" required="" value="" />
+            <x-input label="Imagem Link:" name="image" id="image" type="text" required="" value="" />
             <x-button icon="save" label="Salvar" type="submit"></x-button>
         </form>
     </x-modal>

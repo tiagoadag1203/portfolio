@@ -12,11 +12,33 @@ body {
     scroll-behavior: smooth;
 }
 
+/* Works on Firefox */
+/* * {
+    scrollbar-width: 5px;
+    scrollbar-color: var(--title-color) var(--background-color);
+  }
+   */
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 0px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--title-color);
+    border-radius: 20px;
+    border: 3px solid var(--background-color);
+}
+
 span {
     font-family: 'JetBrains Mono', monospace;
 }
 
-a{
+a {
     text-decoration: none;
     color: var(--title-color);
 }
@@ -44,10 +66,15 @@ h3 {
     font-size: 1.5rem;
 }
 
+li {
+    overflow-x: auto;
+}
+
 .main {
     width: 100%;
-    padding: 50px 200px;
+    padding: 50px 100px; /* Valor padrão para telas maiores que 1400px */
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .flex {
@@ -60,22 +87,26 @@ h3 {
 
 .center-horizontal {
     display: flex;
-    justify-content: center; /* Alinha horizontalmente */
+    justify-content: center;
+    /* Alinha horizontalmente */
 }
 
 .center-vertical {
     display: flex;
-    align-items: center; /* Alinha verticalmente */
+    align-items: center;
+    /* Alinha verticalmente */
 }
 
 .align-left {
     display: flex;
-    justify-content: flex-start; /* Alinha à esquerda */
+    justify-content: flex-start;
+    /* Alinha à esquerda */
 }
 
 .align-right {
     display: flex;
-    justify-content: flex-end; /* Alinha à direita */
+    justify-content: flex-end;
+    /* Alinha à direita */
 }
 
 .space-between {
@@ -100,4 +131,16 @@ h3 {
 
 .gap-30 {
     gap: 30px;
+}
+
+@media screen and (max-width: 1024px) {
+    .main {
+        padding: 50px 20px; /* Para telas até 1024px */
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1400px) {
+    .main {
+        padding: 50px 50px; /* Para telas de 1025px até 1400px */
+    }
 }

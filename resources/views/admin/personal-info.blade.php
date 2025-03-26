@@ -10,7 +10,7 @@
         <h1>Perfil</h1>
     </div>
     <x-button onclick="openModal('modalEdit')" icon="edit" label="Editar" type=""></x-button>
-    <div class="flex center-vertical gap-20">
+    <div class="personal-info flex center-vertical gap-20">
         <img class="personal-img" src="{{ $personalInfo->image }}" alt="">
         <p>{{ $personalInfo->bio }}</p>
     </div>

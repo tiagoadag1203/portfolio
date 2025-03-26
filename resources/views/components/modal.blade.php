@@ -21,15 +21,18 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        z-index: 999;
     }
 
     .modal-content {
         background: var(--background-color);
         border: 2px solid var(--title-color);
         border-radius: 20px;
-        width: 600px;
+        width: 100%;
+        max-width: 600px;
         max-height: 600px;
         overflow: hidden;
+        margin: 20px;
     }
 
     .modal-header {
