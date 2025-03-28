@@ -68,13 +68,22 @@ h3 {
 
 li {
     overflow-x: auto;
+    overflow-y: hidden;
+}
+
+p {
+    font-size: 1.2rem;
 }
 
 .main {
     width: 100%;
-    padding: 50px 100px; /* Valor padrão para telas maiores que 1400px */
+    padding: 50px 100px;    /* Valor padrão para telas maiores que 1400px */
     box-sizing: border-box;
     overflow-x: hidden;
+}
+
+.section {
+    margin-top: 150px;
 }
 
 .flex {
@@ -135,12 +144,14 @@ li {
 
 @media screen and (max-width: 1024px) {
     .main {
-        padding: 50px 20px; /* Para telas até 1024px */
+        padding: 50px 20px;
+        /* Para telas até 1024px */
     }
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1400px) {
     .main {
-        padding: 50px 50px; /* Para telas de 1025px até 1400px */
+        padding: 50px 50px;
+        /* Para telas de 1025px até 1400px */
     }
 }
