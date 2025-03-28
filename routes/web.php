@@ -14,15 +14,10 @@ Route::middleware('auth')->group(function () {
         return view('admin.dashboard');
     })->name('dashboard');
     Route::prefix('dashboard')->group(function () {
-        Route::resource('personal-info', PersonalInfoController::class);
+        Route::resource('personal-info', PersonalInfoController::class)->only(['index', 'update']);
         Route::resource('skills', SkillController::class)->only(['index', 'store', 'update', 'destroy']);
         Route::resource('certificates', CertificateController::class)->only(['store', 'show', 'update', 'destroy']);
-        Route::resource('personal-info', PersonalInfoController::class)->only(['index', 'update']);
-        Route::resource('skills', SkillController::class);
-        Route::resource('certificates', CertificateController::class);
-        Route::resource('experiences', ExperienceController::class);
-        Route::resource('projects', ProjectController::class)->only(['index', 'store', 'update', 'destroy']);
         Route::resource('experiences', ExperienceController::class)->only(['index', 'store', 'update', 'destroy']);
-        Route::resource('projects', ProjectController::class);
+        Route::resource('projects', ProjectController::class)->only(['index', 'store', 'update', 'destroy']);
     });
 });
