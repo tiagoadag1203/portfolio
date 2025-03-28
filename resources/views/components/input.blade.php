@@ -17,6 +17,11 @@
         color: var(--title-color);
     }
 
+    .input:focus {
+        border: 1px solid var(--gray);
+        outline: none;
+    }
+
     textarea {
         resize: none;
         height: 100px;

@@ -26,7 +26,7 @@
 
     .modal-content {
         background: var(--background-color);
-        border: 2px solid var(--title-color);
+        border: 1px solid var(--gray);
         border-radius: 20px;
         width: 100%;
         max-width: 600px;
@@ -42,6 +42,14 @@
         margin-bottom: 10px;
         border-bottom: 1px solid var(--gray);
         padding: 20px;
+    }
+
+    .modal-title {
+        margin: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        max-width: 300px;
     }
 
     .modal-body {

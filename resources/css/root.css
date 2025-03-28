@@ -1,6 +1,7 @@
 :root {
-    --background-color: #0F0F0F;
-    --secondary-background-color: #171717;
+    --background-color: #000000;
+    --secondary-background-color: #0D0D0E;
+    --tertiary-background-color: #1A1A1B;
     --primary: #6FA8B6;
     --title-color: #FFFEF6;
     --text-color: #D6D3C2;
@@ -12,7 +13,7 @@
     --dark-green: #002F00;
     --light-blue: #5FBCFF;
     --dark-blue: #193346;
-    --gray: #282828;
+    --gray: #303134;
 }
 
 /* Tema escuro */
