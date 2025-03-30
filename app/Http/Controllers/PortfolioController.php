@@ -14,6 +14,8 @@ class PortfolioController extends Controller
     public function index()
     {
         $personalInfo = PersonalInfo::first();
+        $softSkills = Skill::where('skill_type', 'soft')->get();
+        $hardSkills = Skill::where('skill_type', 'hard')->get();
         $skills = Skill::all();
         $certificates = Certificate::all();
         $experiences = Experience::all();
@@ -21,6 +23,8 @@ class PortfolioController extends Controller
 
         return view('portfolio', compact(
             'personalInfo',
+            'hardSkills',
+            'softSkills',
             'skills',
             'certificates',
             'experiences',

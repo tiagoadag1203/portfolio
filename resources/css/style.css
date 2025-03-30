@@ -39,6 +39,7 @@ span {
 }
 
 a {
+    width: fit-content;
     text-decoration: none;
     color: var(--title-color);
 }
@@ -55,15 +56,18 @@ h6 {
 h1 {
     font-size: 2.5rem;
     font-weight: 700;
+    width: fit-content;
 }
 
 h2 {
     font-size: 2rem;
     font-weight: 700;
+    width: fit-content;
 }
 
 h3 {
     font-size: 1.5rem;
+    width: fit-content;
 }
 
 li {
@@ -71,9 +75,9 @@ li {
     overflow-y: hidden;
 }
 
-p {
+/* p {
     font-size: 1.2rem;
-}
+} */
 
 .main {
     width: 100%;
@@ -83,7 +87,9 @@ p {
 }
 
 .section {
+    /* display: none; */
     margin-top: 150px;
+    padding: 0 100px;
 }
 
 .flex {
@@ -140,6 +146,10 @@ p {
 
 .gap-30 {
     gap: 30px;
+}
+
+.gap-50 {
+    gap: 50px;
 }
 
 @media screen and (max-width: 1024px) {

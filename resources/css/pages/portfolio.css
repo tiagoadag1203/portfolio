@@ -1,0 +1,74 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+}
+
+.navbar {
+    width: fit-content;
+    background-color: var(--secondary-background-color);
+    border: 1px solid var(--gray);
+    border-radius: 100px;
+    padding: 25px;
+}
+
+.navbar-logo {
+    width: 60px;
+}
+
+.nav-item {
+    list-style: none;
+    cursor: pointer;
+    color: var(--title-color);
+    transition: 0.2s;
+}
+
+.nav-item:hover {
+    color: var(--primary);
+}
+
+/* HOME */
+
+#home {
+    h1 {
+        font-size: 4rem;
+        color: var(--title-color);
+    }
+
+    p {
+        max-width: 800px;
+    }
+}
+
+.socials {
+    width: fit-content;
+    padding: 10px;
+    border: 1px solid var(--gray);
+    border-radius: 100px;
+    background-color: var(--secondary-background-color);
+}
+
+.perfil-image-container {
+    width: 450px;
+    height: 450px;
+    padding: 10px;
+    background-color: var(--secondary-background-color);
+    border: 1px solid var(--gray);
+    background-size: cover;
+    border-radius: 50%;
+}
+
+.perfil-image {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+}
+
+/* SKILLS */
+
+.skill-container {
+    width: 100%;
+    justify-content: flex-start;
+}
