@@ -81,7 +81,8 @@ li {
 
 .main {
     width: 100%;
-    padding: 50px 100px;    /* Valor padrão para telas maiores que 1400px */
+    padding: 50px 100px;
+    /* Valor padrão para telas maiores que 1400px */
     box-sizing: border-box;
     overflow-x: hidden;
 }
@@ -150,6 +151,18 @@ li {
 
 .gap-50 {
     gap: 50px;
+}
+
+@media screen and (max-width: 830px) {
+    .main {
+        padding: 20px 20px;
+        /* Para telas até 1024px */
+    }
+
+    .section {
+        margin-top: 100px;
+        padding: 0;
+    }
 }
 
 @media screen and (max-width: 1024px) {

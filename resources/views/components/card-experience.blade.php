@@ -47,4 +47,15 @@
         background-color: var(--dark-green);
         color: var(--light-green);
     }
+
+    @media screen and (max-width: 830px) {
+        .card-experience {
+            width: 100%;
+        }
+
+        .card-experience-img {
+            width: 50px;
+            height: 50px;
+        }
+    }
 </style>
