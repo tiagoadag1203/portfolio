@@ -13,7 +13,8 @@
     <link href="{{ asset('css/root.css') }}" rel="stylesheet">
     <link href="{{ asset('css/pages/dashboard.css') }}" rel="stylesheet">
     <link href="{{ asset('css/pages/login.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/pages/personalInfo.css') }}" rel="stylesheet"> -->
+    <link href="{{ asset('css/pages/personalInfo.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/pages/portfolio.css') }}" rel="stylesheet"> -->
 </head>
 
 <body>

@@ -90,7 +90,7 @@
     <section id="experiencia" class="section" style="display: none;">
         <div class="flex column center-vertical gap-30">
             <h1>Experiência</h1>
-            <div class="flex gap-20 center-vertical wrap">
+            <div class="flex gap-20 center-vertical center-horizontal wrap">
                 @foreach ($experiences as $experience)
                 <x-card-experience :item="$experience"></x-card-experience>
                 @endforeach
