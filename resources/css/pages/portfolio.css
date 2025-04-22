@@ -69,6 +69,12 @@
     border-radius: 50%;
 }
 
+.cape-image {
+    width: 400px;
+    height: 400px;
+}
+
+
 .perfil-image {
     width: 400px;
     height: 400px;
@@ -128,7 +134,7 @@
         flex-direction: column;
     }
 
-    .perfil-image-container, .perfil-image {
+    .perfil-image-container, .perfil-image, .cape-image {
         width: 200px;
         height: 200px;
     }
@@ -151,12 +157,7 @@
 
 @media screen and (min-width: 831px) and (max-width: 1024px) {
     
-    .perfil-image-container {
-        width: 300px;
-        height: 300px;
-    }
-
-    .perfil-image {
+    .perfil-image-container, .perfil-image, .cape-image {
         width: 300px;
         height: 300px;
     }

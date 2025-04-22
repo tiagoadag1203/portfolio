@@ -31,7 +31,7 @@
 
     .button-social:hover {
         background-color: var(--primary);
-        color: var(--title-color);
+        color: var(--tertiary-background-color);
         padding: 10px 20px;
     }
 

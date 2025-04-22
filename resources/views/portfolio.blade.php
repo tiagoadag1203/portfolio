@@ -40,9 +40,7 @@
                     <x-button-social icon="fa-brands fa-github" label="GitHub" link="https://github.com/tiagoadag1203"></x-button-social>
                 </div>
             </div>
-            <div class="perfil-image-container">
-                <img class="perfil-image" src="https://iili.io/3zQ498g.jpg" alt="">
-            </div>
+            <img class="cape-image" src="https://iili.io/3GOvjEb.png" alt="">
         </div>
     </section>
 
