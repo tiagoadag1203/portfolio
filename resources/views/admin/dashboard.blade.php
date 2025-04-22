@@ -3,10 +3,12 @@
 @section('titulo', 'Dashboard')
 
 @section('conteudo')
+<x-alert></x-alert>
 <main class="main flex column gap-30">
     <h1>Olá Tiago!<br>
         Seja bem-vindo 👋!
     </h1>
+    <h3>Gerenciar:</h3>
     <div class="flex wrap gap-20">
         <a href="{{ route('personal-info.index') }}">
             <div class="button-section flex column center-horizontal center-vertical gap-10">
@@ -39,5 +41,16 @@
             </div>
         </a>
     </div>
+    <h3>Mensagens:</h3>
+    <div class="flex wrap gap-20">
+        @if ($messages->isEmpty())
+        <p>Não há mensagens disponíveis.</p>
+        @endif
+        @foreach($messages as $message)
+        <x-card-message :message="$message" />
+        @endforeach
+    </div>
+
+
 </main>
 @endsection

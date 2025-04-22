@@ -2,7 +2,9 @@
     @if ($icon)
     <span class="material-symbols-outlined">{{ $icon }}</span>
     @endif
+    @if ($label)
     <span>{{ $label }}</span>
+    @endif
 </button>
 <style>
     .button {
@@ -32,12 +34,12 @@
 
     
     .edit {
-        background-color: var(--light-blue);
-        color: var(--dark-blue);
+        background-color: var(--dark-blue);
+        color: var(--light-blue);
     }
 
     .delete {
-        background-color: var(--light-red);
-        color: var(--dark-red);
+        background-color: var(--dark-red);
+        color: var(--light-red);
     }
 </style>

@@ -113,7 +113,7 @@
         <div class="flex column center-vertical gap-30">
             <h1>Contato</h1>
             <div class="contact-container flex center-horizontal">
-                <form action="" method="post" class="contact-form flex column center-vertical gap-20">
+                <form action="{{ route('messages.store') }}" method="post" class="contact-form flex column center-vertical gap-20">
                     @csrf
                     <x-input id="name" label="Nome" name="name" type="text" placeholder="Digite seu nome" required="true"></x-input>
                     <x-input id="email" label="Email" name="email" type="email" placeholder="Digite seu email" required="true"></x-input>

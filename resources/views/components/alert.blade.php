@@ -26,7 +26,7 @@
         if (alert) {
             alert.remove();
         }
-    }, 3000);
+    }, 5000);
 </script>
 <style>
     .alert-container {

@@ -19,8 +19,9 @@
 }
 
 .logout {
-    background: var(--light-red);
-    color: var(--dark-red);
+    background: var(--dark-red);
+    color: var(--light-red);
+    border: none;
 }
 
 .logout:hover {
