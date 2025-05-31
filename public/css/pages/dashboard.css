@@ -1,0 +1,31 @@
+.button-section {
+    background-color: var(--secondary-background-color);
+    width: 90px;
+    height: 90px;
+    padding: 20px;
+    border: 1px solid var(--gray);
+    border-radius: 30px;
+    transition: 0.2s;
+}
+
+.button-section:hover {
+    background: var(--primary);
+}
+
+.button-section {
+    span {
+        font-size: 2rem;
+    }
+}
+
+.logout {
+    background: var(--dark-red);
+    color: var(--light-red);
+    border: none;
+}
+
+.logout:hover {
+    background: var(--dark-red);
+    color: var(--light-red);
+    border-color: var(--light-red);
+}

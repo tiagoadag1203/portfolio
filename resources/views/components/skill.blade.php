@@ -1,27 +1,32 @@
-@props(['skill', 'img', 'name'])
+@props(['skill'])
 
 <div class="skill flex gap-10 center-vertical space-between">
     <div class="content flex gap-10 center-vertical">
-        <img src="{{ $img }}" alt="{{ $name }}" class="skill-icon">
-        <p class="skill-name">{{ $name }}</p>
+        <img src="{{ $skill->image }}" alt="{{ $skill->name }}" class="skill-icon">
+        <p class="skill-name">{{ Str::limit($skill->name, 25, '...') }}</p>
     </div>
     <div>
-        <span class="info material-symbols-outlined" onclick="openModal('modal-{{ $name }}')">
+        <span class="info material-symbols-outlined" onclick="openModal('modal-{{ $skill->name }}')">
             info
         </span>
     </div>
 </div>
 
-<x-modal id="modal-{{ $name }}" title="{{ $name }}">
+<x-modal id="modal-{{ $skill->name }}" title="{{ $skill->name }}">
     <div class="flex column gap-20">
         <h3>Descrição:</h3>
         <p>{{ $skill->description }}</p>
+
+        @if ($skill->skill_type == 'hard')
+        <p>Nível de Conhecimento:</p>
         <div class="flex gap-10">
             <div class="progress-bar">
                 <div class="progress-fill" style="width: {{ $skill->percentage }}%"></div>
             </div>
             <p>{{ $skill->percentage }}%</p>
         </div>
+        @endif
+        
         <h3>Certificados:</h3>
         <div class="flex gap-20 wrap">
             @if ($skill->certificates->isEmpty())

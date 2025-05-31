@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('role');
             $table->text('description');
             $table->string('image')->nullable();
-            $table->date('start_date');
-            $table->date('end_date')->nullable();
+            $table->string('start_date'); // Alterado de date para string
+            $table->string('end_date')->nullable(); // Alterado de date para string
             $table->timestamps();
         });
     }

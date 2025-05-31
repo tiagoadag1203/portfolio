@@ -1,6 +1,13 @@
 @props(['item'])
 
-<div class="card-experience flex column gap-10">
+@php
+    $meses = [
+        '01' => 'Jan', '02' => 'Fev', '03' => 'Mar', '04' => 'Abr', '05' => 'Mai', '06' => 'Jun',
+        '07' => 'Jul', '08' => 'Ago', '09' => 'Set', '10' => 'Out', '11' => 'Nov', '12' => 'Dez'
+    ];
+@endphp
+
+<div class="card-experience flex column gap-20">
     <div class="flex center-vertical gap-10">
         <img src="{{ $item->image }}" alt="" class="card-experience-img">
         <div class="flex column gap-10">
@@ -8,10 +15,13 @@
             <p>{{ $item->role }}</p>
         </div>
     </div>
-    <div class="flex column gap-10">
-        <p>{{ $item->description }}</p>
+    <div class="content flex space-between column gap-10">
+        <p>{{ Str::limit($item->description, 50, '...') }}</p>
         <div class="period {{ empty($item->end_date) ? 'no-end-date' : 'has-end-date' }}">
-            <p>{{ $item->start_date }} - {{ $item->end_date ?? 'Presente' }}</p>
+            <p>
+                {{ $meses[date('m', strtotime($item->start_date))] }}/{{ date('Y', strtotime($item->start_date)) }} - 
+                {{ !empty($item->end_date) ? $meses[date('m', strtotime($item->end_date))] . '/' . date('Y', strtotime($item->end_date)) : 'Presente' }}
+            </p>
         </div>
     </div>
 </div>
@@ -19,6 +29,7 @@
 <style>
     .card-experience {
         width: 350px;
+        max-width: 350px;
         background-color: var(--secondary-background-color);
         border: 1px solid var(--gray);
         border-radius: 20px;
@@ -27,10 +38,15 @@
     }
 
     .card-experience-img {
-        width: 70px;
-        height: 70px;
+        width: 50px;
+        height: 50px;
         border-radius: 10px;
         object-fit: cover;
+    }
+
+    .content {
+        width: 100%;
+        height: 100%;
     }
 
     .period {

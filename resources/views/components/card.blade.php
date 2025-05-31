@@ -4,11 +4,11 @@
     <img src="{{ $item->image }}" alt="" class="card-img">
     <div class="flex column gap-20">
         <h5>
-            {{ $item->name }}
+            {{ Str::limit($item->name, 30, '...') }}
         </h5>
         @if ($type === 'project')
             <p class="description">
-                {{ \Illuminate\Support\Str::limit($item->description, 50, '...') }}
+                {{ Str::limit($item->description, 50, '...') }}
             </p>
         @endif
         <div class="flex gap-10">

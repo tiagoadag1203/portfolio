@@ -30,7 +30,7 @@
 </header>
 
 <main class="main">
-    <section id="home" class="section" style="display: none;">
+    <section id="home" class="section" >
         <div class="home flex center-vertical center-horizontal space-between gap-30">
             <div class="texts flex column gap-20">
                 <h1>Olá Mundo!<br>Eu sou o Tiago Augusto!</h1>
@@ -44,7 +44,7 @@
         </div>
     </section>
 
-    <section id="perfil" class="section" style="display: none;">
+    <section id="perfil" class="section" >
         <div class="perfil flex gap-30 center-vertical">
             <div class="perfil-image-container">
                 <img class="perfil-image" src="https://iili.io/3zQ498g.jpg" alt="">
@@ -56,7 +56,7 @@
         </div>
     </section>
 
-    <section id="habilidades" class="section" style="display: none;">
+    <section id="habilidades" class="section" >
         <div class="skills flex column center-vertical gap-50">
             <h1>Habilidades</h1>
             <div class="skills-container flex gap-50">
@@ -65,7 +65,7 @@
                     <ul class="flex column gap-10">
                         @foreach ($hardSkills as $hardSkill)
                         <li>
-                            <x-skill :skill="$hardSkill" img="{{ $hardSkill->image }}" name="{{ $hardSkill->name }}"></x-skill>
+                            <x-skill :skill="$hardSkill"></x-skill>
                         </li>
                         @endforeach
                     </ul>
@@ -76,7 +76,7 @@
                     <ul class="flex column gap-10">
                         @foreach ($softSkills as $softSkill)
                         <li>
-                            <x-skill :skill="$hardSkill" img="{{ $hardSkill->image }}" name="{{ $hardSkill->name }}"></x-skill>
+                            <x-skill :skill="$softSkill"></x-skill>
                         </li>
                         @endforeach
                     </ul>
@@ -85,10 +85,10 @@
         </div>
     </section>
 
-    <section id="experiencia" class="section" style="display: none;">
+    <section id="experiencia" class="section" >
         <div class="flex column center-vertical gap-30">
             <h1>Experiência</h1>
-            <div class="flex gap-20 center-vertical center-horizontal wrap">
+            <div class="flex gap-20 center-vertical center-horizontal stretch wrap">
                 @foreach ($experiences as $experience)
                 <x-card-experience :item="$experience"></x-card-experience>
                 @endforeach
@@ -96,10 +96,10 @@
         </div>
     </section>
 
-    <section id="projetos" class="section" style="display: none;">
+    <section id="projetos" class="section" >
         <div class="flex column center-vertical gap-30">
             <h1>Projetos</h1>
-            <div class="flex gap-20 center-vertical wrap">
+            <div class="flex gap-20 center-vertical center-horizontal ">
                 @foreach ($projects as $project)
                 <x-card :item="$project" type="project"></x-card>
                 @endforeach
@@ -107,7 +107,7 @@
         </div>
     </section>
 
-    <section id="contato" class="section" style="display: none;">
+    <section id="contato" class="section" >
         <div class="flex column center-vertical gap-30">
             <h1>Contato</h1>
             <div class="contact-container flex center-horizontal">
