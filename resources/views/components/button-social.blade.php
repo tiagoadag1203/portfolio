@@ -14,8 +14,8 @@
 <style>
     .button-social {
         width: fit-content;
-        min-width: 35px;
-        height: 35px;
+        min-width: 40px;
+        height: 40px;
         background-color: var(--title-color);
         border-radius: 100px;
         padding: 10px;
@@ -26,6 +26,11 @@
 
         span {
             font-size: 1.2rem;
+        }
+
+        svg {
+            width: 20px;
+            height: 20px;
         }
     }
 
