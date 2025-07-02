@@ -7,7 +7,7 @@
     ];
 @endphp
 
-<div class="card-experience flex column gap-20">
+<div class="card card-experience flex column gap-20">
     <div class="flex center-vertical gap-10">
         <img src="{{ $item->image }}" alt="" class="card-experience-img">
         <div class="flex column gap-10">
@@ -25,54 +25,3 @@
         </div>
     </div>
 </div>
-
-<style>
-    .card-experience {
-        width: 350px;
-        max-width: 350px;
-        background-color: var(--secondary-background-color);
-        border: 1px solid var(--gray);
-        border-radius: 20px;
-        padding: 10px;
-        box-sizing: border-box;
-    }
-
-    .card-experience-img {
-        width: 50px;
-        height: 50px;
-        border-radius: 10px;
-        object-fit: cover;
-    }
-
-    .content {
-        width: 100%;
-        height: 100%;
-    }
-
-    .period {
-        width: fit-content;
-        padding: 5px 10px;
-        border-radius: 100px;
-    }
-
-    .has-end-date {
-        background-color: var(--dark-red);
-        color: var(--light-red); /* Cor para quando há data de fim */
-    }
-
-    .no-end-date {
-        background-color: var(--dark-green);
-        color: var(--light-green);
-    }
-
-    @media screen and (max-width: 830px) {
-        .card-experience {
-            width: 100%;
-        }
-
-        .card-experience-img {
-            width: 50px;
-            height: 50px;
-        }
-    }
-</style>

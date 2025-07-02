@@ -6,33 +6,3 @@
         <input class="input" type="{{ $type }}" name="{{ $name }}" id="{{ $id }}" {{ $required ? 'required' : '' }} value="{{ $value ?? '' }}" />
     @endif
 </div>
-<style>
-    .input {
-        width: 100%;
-        background-color: var(--secondary-background-color);
-        padding: 15px;
-        box-sizing: border-box;
-        border: none;
-        border-radius: 15px;
-        color: var(--title-color);
-    }
-
-    .input:focus {
-        border: 1px solid var(--gray);
-        outline: none;
-    }
-
-    textarea {
-        resize: none;
-        height: 100px;
-    }
-    
-    input[type="file"] {
-        border: 2px dashed var(--title-color);
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
-</style>

@@ -28,27 +28,3 @@
         }
     }, 5000);
 </script>
-<style>
-    .alert-container {
-        position: fixed;
-        top: 20px;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
-    }
-
-    .alert {
-        padding: 20px;
-        border-radius: 10px;
-    }
-
-    .alert-success {
-        background: var(--dark-green);
-        color: var(--light-green);
-    }
-
-    .alert-danger {
-        background: var(--dark-red);
-        color: var(--light-red);
-    }
-</style>

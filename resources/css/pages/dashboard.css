@@ -10,6 +10,7 @@
 
 .button-section:hover {
     background: var(--primary);
+    color: var(--secondary-background-color);
 }
 
 .button-section {
