@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
-html,
+html {
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+
 body {
     display: flex;
+    flex-direction: column;
     min-height: 100vh;
     width: 100%;
     background-color: var(--background-color);
@@ -10,7 +15,8 @@ body {
     font-family: 'JetBrains Mono', monospace;
     font-size: 15px;
     line-height: 1.2;
-    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
 }
 
 /* Works on Firefox */
@@ -82,16 +88,35 @@ li {
 
 .main {
     width: 100%;
-    padding: 50px 100px;
-    /* Valor padrão para telas maiores que 1400px */
+    padding: 0;
     box-sizing: border-box;
     overflow-x: hidden;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .section {
-    /* display: none; */
-    margin-top: 150px;
-    padding: 0 100px;
+    margin-top: 0;
+    padding: 80px 100px 40px 100px;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: 100%;
+    scroll-margin-top: 120px;
+}
+
+.section:first-child {
+    padding-top: 120px;
+    min-height: 100vh;
+}
+
+.section > * {
+    width: 100%;
+    max-width: 100%;
 }
 
 .flex {
@@ -162,26 +187,85 @@ li {
 
 @media screen and (max-width: 830px) {
     .main {
-        padding: 20px 20px;
-        /* Para telas até 1024px */
+        padding: 0;
     }
 
     .section {
-        margin-top: 100px;
-        padding: 0;
+        margin-top: 0;
+        padding: 60px 20px 20px 20px;
+        min-height: 85vh;
+        box-sizing: border-box;
+        width: 100%;
+        scroll-margin-top: 100px;
+    }
+
+    .section:first-child {
+        padding-top: 100px;
+        min-height: 100vh;
+    }
+
+    .section > * {
+        width: 100%;
+        max-width: 100%;
     }
 }
 
-@media screen and (max-width: 1024px) {
-    .main {
-        padding: 50px 20px;
-        /* Para telas até 1024px */
+@media screen and (min-width: 831px) and (max-width: 1024px) {
+    .section {
+        padding: 70px 50px 30px 50px;
+        width: 100%;
+        min-height: 85vh;
+        scroll-margin-top: 110px;
+    }
+
+    .section:first-child {
+        padding-top: 110px;
+        min-height: 100vh;
+    }
+
+    .section > * {
+        width: 100%;
+        max-width: 100%;
     }
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1400px) {
-    .main {
-        padding: 50px 50px;
-        /* Para telas de 1025px até 1400px */
+    .section {
+        padding: 80px 50px 40px 50px;
+        width: 100%;
+        min-height: 90vh;
+        scroll-margin-top: 120px;
+    }
+
+    .section:first-child {
+        padding-top: 120px;
+        min-height: 100vh;
+    }
+
+    .section > * {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Estilo para separadores entre seções */
+.section-divider {
+    width: 600px;
+    height: 2px;
+    border: none;
+    background-color: white;
+    margin: 40px auto;
+    display: block;
+    opacity: 1;
+    flex-shrink: 0;
+    box-shadow: 0 0 15px #cdfc90, 0 0 30px #cdfc90, 0 0 45px rgba(205, 252, 144, 0.5);
+}
+
+@media screen and (max-width: 830px) {
+    .section-divider {
+        margin: 20px auto;
+        width: 70px;
+        height: 1px;
+        box-shadow: 0 0 12px #cdfc90, 0 0 25px #cdfc90, 0 0 35px rgba(205, 252, 144, 0.5);
     }
 }

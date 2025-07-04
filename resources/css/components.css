@@ -224,6 +224,7 @@ input[type="file"].input {
 .alert {
     padding: 20px;
     border-radius: 10px;
+    z-index: 1000;
 }
 
 .alert-success {

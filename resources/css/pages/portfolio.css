@@ -7,6 +7,8 @@
     width: 100%;
     padding: 30px;
     box-sizing: border-box;
+    z-index: 900;
+    pointer-events: none;
 }
 
 .navbar {
@@ -15,6 +17,7 @@
     border: 1px solid var(--gray);
     border-radius: 100px;
     padding: 25px;
+    pointer-events: auto;
 }
 
 .navbar-logo {
@@ -26,10 +29,19 @@
     cursor: pointer;
     color: var(--title-color);
     transition: 0.2s;
+    padding: 8px 16px;
+    border-radius: 20px;
 }
 
 .nav-item:hover {
     color: var(--primary);
+    background-color: var(--tertiary-background-color);
+}
+
+.nav-item.active {
+    color: var(--primary);
+    background-color: var(--tertiary-background-color);
+    box-shadow: 0 0 10px rgba(205, 252, 144, 0.3);
 }
 
 .mobile-nav {
@@ -46,9 +58,11 @@
 /* HOME */
 
 .home {
-    p {
-        max-width: 800px;
-    }
+    width: 100%;
+}
+
+.home p {
+    max-width: 800px;
 }
 
 .socials {
@@ -82,7 +96,17 @@
     border-radius: 50%;
 }
 
+/* PERFIL */
+
+.perfil {
+    width: 100%;
+}
+
 /* SKILLS */
+
+.skills {
+    width: 100%;
+}
 
 .skills-container {
     width: 100%;
